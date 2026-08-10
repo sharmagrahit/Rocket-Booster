@@ -2,33 +2,36 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] float mainThrust = 100f;
+    Rigidbody rd;
     void Start()
     {
-        
+        rd = GetComponent<Rigidbody>();
     }
-
     void Update()
     {
         ProcessThrust();
         ProcessRotation();
     }
-
     void ProcessThrust()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Pressed Space");
+            rd.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
         }
     }
     void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            Debug.Log("Rotating Left");
+            transform.Rotate(Vector3.forward);
+            //or we can use transform.Rotate(0, 0, 1);      
         }
-        if(Input.GetKey(KeyCode.D))
+
+        else if (Input.GetKey(KeyCode.D))
         {
-            Debug.Log("Rotating Right");
+            transform.Rotate(-Vector3.forward);
+            //or we can use transform.Rotate(0, 0, -1);
         }
     }
 }
