@@ -3,17 +3,22 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float mainThrust = 100f;
+    [SerializeField] float RotationThrust = 100f;
     Rigidbody rd;
+
     void Start()
+
     {
         rd = GetComponent<Rigidbody>();
     }
     void Update()
+
     {
         ProcessThrust();
         ProcessRotation();
     }
     void ProcessThrust()
+
     {
         if (Input.GetKey(KeyCode.Space))
         {
@@ -21,17 +26,22 @@ public class Movement : MonoBehaviour
         }
     }
     void ProcessRotation()
+
     {
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.forward);
-            //or we can use transform.Rotate(0, 0, 1);      
+            ApplyRotation(RotationThrust);
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward);
-            //or we can use transform.Rotate(0, 0, -1);
+            ApplyRotation(-RotationThrust);
         }
+    }
+
+    void ApplyRotation(float rotationThisFrame)
+
+    {
+        transform.Rotate(Vector3.forward * Time.deltaTime * rotationThisFrame);
     }
 }
