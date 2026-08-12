@@ -4,29 +4,24 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float RotationThrust = 100f;
-    Rigidbody rd;
-
+    Rigidbody rb;
     void Start()
-
     {
-        rd = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
     void Update()
-
     {
         ProcessThrust();
         ProcessRotation();
     }
     void ProcessThrust()
-
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rd.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
+            rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
         }
     }
     void ProcessRotation()
-
     {
         if (Input.GetKey(KeyCode.A))
         {
@@ -38,10 +33,10 @@ public class Movement : MonoBehaviour
             ApplyRotation(-RotationThrust);
         }
     }
-
     void ApplyRotation(float rotationThisFrame)
-
     {
+        rb.freezeRotation = true;
         transform.Rotate(Vector3.forward * Time.deltaTime * rotationThisFrame);
+        rb.freezeRotation = false;
     }
 }
