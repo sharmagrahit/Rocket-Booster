@@ -609,17 +609,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 76188478608462321, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
-      propertyPath: mainThrust
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2198827400482515481, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
-      propertyPath: m_Constraints
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4038279099976029050, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
       propertyPath: m_Name
       value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552169406704115166, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f85d84985efc084eadafcd1cc6e0668, type: 3}
+    - target: {fileID: 4552169406704115166, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
+      propertyPath: MaxDistance
+      value: 9979.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552169406704115166, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
+      propertyPath: MinDistance
+      value: 146.38684
       objectReference: {fileID: 0}
     - target: {fileID: 6502690195706405042, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
       propertyPath: m_LocalPosition.x
