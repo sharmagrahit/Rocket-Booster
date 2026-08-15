@@ -21,7 +21,15 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
-            audioSource.Play();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+
+        else
+        {
+            audioSource.Stop();
         }
     }
     void ProcessRotation()
