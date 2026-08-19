@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] GameObject cube;
     void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
@@ -14,11 +16,16 @@ public class CollisionHandler : MonoBehaviour
                 break;
             case "fuel":
                 Debug.Log("You picked up the fuel");
+                cube.SetActive(false);
                 break;
             default:
                 Debug.Log("You Blew up");
+                ReloadScene();
                 break;
         }
     }
-
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
