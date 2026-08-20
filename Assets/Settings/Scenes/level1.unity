@@ -561,6 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7fbcca7264ed14184c98947537b457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionHandler
+  cube: {fileID: 2094540728}
 --- !u!1 &2094540728
 GameObject:
   m_ObjectHideFlags: 0
