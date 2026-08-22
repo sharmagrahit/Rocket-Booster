@@ -4,33 +4,33 @@ using UnityEngine.SceneManagement;
 
 public class Practice : MonoBehaviour
 {
-  [SerializeField] GameObject cube;
-  void OnCollisionEnter(Collision other)
+  void Start()
   {
-    switch (other.gameObject.tag)
+
+  }
+  void Update()
+  {
+    ProcessThrust();
+    ProcessRotation();
+  }
+  void ProcessThrust()
+  {
+    if (Input.GetKey(KeyCode.Space))
     {
-      case "friendly":
-        Debug.Log("This is friendly");
-        break;
-
-      case "fuel":
-        Debug.Log("You have picked up the fuel");
-        cube.SetActive(false);
-        break;
-
-      case "finish":
-        Debug.Log("Congratulations you have Finished Level One");
-        break;
-
-      default:
-        Debug.Log("You blew up");
-        break;
-
+      Debug.Log("You have pressed Space");
     }
   }
-  void ReloadLevel()
+
+  void ProcessRotation()
   {
-    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-    SceneManager.LoadScene(currentSceneIndex);
+    if (Input.GetKey(KeyCode.A))
+    {
+      Debug.Log("Rotating Left");
+    }
+    else if (Input.GetKey(KeyCode.D))
+    {
+      Debug.Log("Rotating Right");
+    }
   }
 }
+
