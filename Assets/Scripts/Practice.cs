@@ -1,12 +1,15 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class Practice : MonoBehaviour
 {
+  float MainThrust = 1f;
+  Rigidbody rb;
+
   void Start()
   {
-
+    rb = GetComponent<Rigidbody>();
   }
   void Update()
   {
@@ -17,7 +20,7 @@ public class Practice : MonoBehaviour
   {
     if (Input.GetKey(KeyCode.Space))
     {
-      Debug.Log("You have pressed Space");
+      rb.AddRelativeForce(Vector3.up * Time.deltaTime * MainThrust);
     }
   }
 
