@@ -1,8 +1,10 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    float DelayInLoading = 1f;
     [SerializeField] GameObject cube;
     void OnCollisionEnter(Collision other)
     {
@@ -17,9 +19,14 @@ public class CollisionHandler : MonoBehaviour
                 break;
             default:
                 Debug.Log("You Blew up");
-                ReloadScene();
+                StartCrash();
                 break;
         }
+    }
+    void StartCrash()
+    {
+        Invoke("ReloadLevel", DelayInLoading);
+        GetComponent<Movement>().enabled = false;
     }
     void LoadNextLevel()
     {
@@ -29,10 +36,9 @@ public class CollisionHandler : MonoBehaviour
         {
             nextSceneIndex = 0;
         }
-
         SceneManager.LoadScene(nextSceneIndex);
     }
-    void ReloadScene()
+    void ReloadLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
