@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +16,7 @@ public class CollisionHandler : MonoBehaviour
                 break;
             case "Finish":
                 Debug.Log("congratulations! you have reached finish point");
-                LoadNextLevel();
+                StartSuccess();
                 break;
             default:
                 Debug.Log("You Blew up");
@@ -28,14 +29,25 @@ public class CollisionHandler : MonoBehaviour
         Invoke("ReloadLevel", DelayInLoading);
         GetComponent<Movement>().enabled = false;
     }
-    void LoadNextLevel()
+    void StartSuccess()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        Invoke("LoadNextLevel", DelayInLoading);
+        GetComponent<Movement>().enabled = false;
     }
     void ReloadLevel()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
+    void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
+    }
+
 }
