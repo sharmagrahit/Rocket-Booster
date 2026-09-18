@@ -721,10 +721,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 76188478608462321, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 6f85d84985efc084eadafcd1cc6e0668, type: 3}
     - target: {fileID: 794613244636418382, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
       propertyPath: cube
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 794613244636418382, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
+      propertyPath: DeathSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: f1eea7a6637b3dc48a790e44bb481cd3, type: 3}
+    - target: {fileID: 794613244636418382, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
+      propertyPath: SuccessSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 00ecc4c3420e55b4a94093971d650508, type: 3}
     - target: {fileID: 4038279099976029050, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
       propertyPath: m_Name
       value: Rocket
