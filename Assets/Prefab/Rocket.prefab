@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionHandler
   cube: {fileID: 0}
+  DeathSFX: {fileID: 8300000, guid: f1eea7a6637b3dc48a790e44bb481cd3, type: 3}
+  SuccessSFX: {fileID: 8300000, guid: 00ecc4c3420e55b4a94093971d650508, type: 3}
 --- !u!114 &76188478608462321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Movement
   mainThrust: 1000
   RotationThrust: 100
+  mainEngine: {fileID: 8300000, guid: 6f85d84985efc084eadafcd1cc6e0668, type: 3}
 --- !u!54 &2198827400482515481
 Rigidbody:
   m_ObjectHideFlags: 0

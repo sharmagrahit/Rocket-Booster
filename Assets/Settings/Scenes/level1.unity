@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22716606, y: -0, z: -0, w: 0.9738561}
-  m_LocalPosition: {x: -0.000000003179912, y: 27.14, z: -38.94}
+  m_LocalPosition: {x: -0.000000003179912, y: 32.24, z: -49.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -347,13 +347,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7103937, y: 0.021694943, z: -0.031333465, w: -0.7027719}
-  m_LocalPosition: {x: 9.36, y: 6.48, z: 2.85}
+  m_LocalRotation: {x: -0.7078155, y: 0.026431069, z: -0.026546814, w: -0.7054034}
+  m_LocalPosition: {x: 9.13, y: 20.68, z: 2.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 89.005, y: 126.187, z: -229.515}
+  m_LocalEulerAnglesHint: {x: 89.806, y: 175.106, z: -180.6}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,22 +721,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 76188478608462321, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
-      propertyPath: mainEngine
-      value: 
-      objectReference: {fileID: 8300000, guid: 6f85d84985efc084eadafcd1cc6e0668, type: 3}
-    - target: {fileID: 794613244636418382, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
-      propertyPath: cube
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 794613244636418382, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
-      propertyPath: DeathSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: f1eea7a6637b3dc48a790e44bb481cd3, type: 3}
-    - target: {fileID: 794613244636418382, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
-      propertyPath: SuccessSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 00ecc4c3420e55b4a94093971d650508, type: 3}
     - target: {fileID: 4038279099976029050, guid: a79553dc467a6c249801b4a431d5ad67, type: 3}
       propertyPath: m_Name
       value: Rocket

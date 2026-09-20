@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     AudioSource audioSource;
-    float DelayInLoading = 1f;
+    float DelayInLoading = 0.5f;
     [SerializeField] GameObject cube;
     [SerializeField] AudioClip DeathSFX;
     [SerializeField] AudioClip SuccessSFX;
+    bool isTransitioning = false;
 
     void Start()
     {
@@ -17,29 +19,38 @@ public class CollisionHandler : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        switch (other.gameObject.tag)
+        if (isTransitioning == false)
         {
-            case "friendly":
-                Debug.Log("This thing is friendly");
-                break;
-            case "Finish":
-                Debug.Log("congratulations! you have reached finish point");
-                StartSuccess();
-                break;
-            default:
-                Debug.Log("You Blew up");
-                StartCrash();
-                break;
+            switch (other.gameObject.tag)
+            {
+                case "friendly":
+                    Debug.Log("This thing is friendly");
+                    break;
+                case "Finish":
+                    Debug.Log("congratulations! you have reached finish point");
+                    StartSuccess();
+                    break;
+                default:
+                    Debug.Log("You Blew up");
+                    StartCrash();
+                    break;
+            }
         }
+
     }
     void StartCrash()
+
     {
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(DeathSFX);
         Invoke("ReloadLevel", DelayInLoading);
         GetComponent<Movement>().enabled = false;
     }
     void StartSuccess()
     {
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(SuccessSFX);
         Invoke("LoadNextLevel", DelayInLoading);
         GetComponent<Movement>().enabled = false;
