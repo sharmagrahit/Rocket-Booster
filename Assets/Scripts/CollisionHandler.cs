@@ -41,6 +41,7 @@ public class CollisionHandler : MonoBehaviour
     void StartCrash()
 
     {
+        //Fix duplicate collision audio
         isTransitioning = true;
         audioSource.Stop();
         audioSource.PlayOneShot(DeathSFX);
@@ -49,6 +50,7 @@ public class CollisionHandler : MonoBehaviour
     }
     void StartSuccess()
     {
+        //Fix duplicate collision audio
         isTransitioning = true;
         audioSource.Stop();
         audioSource.PlayOneShot(SuccessSFX);
@@ -65,6 +67,7 @@ public class CollisionHandler : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+
         {
             nextSceneIndex = 0;
         }
